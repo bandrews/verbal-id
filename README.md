@@ -17,15 +17,15 @@ const verbalid = require('verbal-uuid');
 ~~~~
 
 > verbaluuid.create()
-'tomato rhino winter frame'
+'vacant brand orchestra kiwi'
 
-> verbaluuid.parse("tomato rhino winter frame")
+> verbaluuid.parse("vacant brand orchestra kiwi")
 '8aab9b999'
 
 > verbaluuid.create("8aab9b999")
-'tomato rhino winter frame'
+'vacant brand orchestra kiwi'
 
-> verbaluuid.parse("tomato rhino winter dragon")    // valid words, but checksum is incorrect
+> verbaluuid.parse("vacant brand orchestra kiwi")    // valid words, but checksum is incorrect
 undefined
 
 ~~~~
@@ -34,7 +34,7 @@ undefined
 ### Why a new library?
 I wanted a unique identifier that my project's users could transfer verbally to each other without ambiguity.  Existing projects like [WCodes](https://wcodes.org/wordlist) have provided a similar idea, but the word list contains homophones and words with negative connotations.
 
-I also wanted the system to be tolerant to minor typos, which necessitated adopting a word list which is interally unique when checked using common edit distance techniques.  This support isn't implemented in 0.0.1, but all the foundation is there.
+I also wanted the system to be tolerant to minor typos, which necessitated adopting a word list which is interally unique using phonetic codes generated using Metaphone.
 
 ### How many bits are each ID?
 The library generates four-word identifiers that represent 36-bit numbers with 4 bits of parity (calculated with the BSD checksum algorithm) for a total of 40 bits of data, 10 per word.
