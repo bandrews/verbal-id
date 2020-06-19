@@ -30,7 +30,7 @@ undefined
 
 ~~~~
 
-## Introduction
+## Introducti'on
 ### Why a new library?
 I wanted a unique identifier that my project's users could transfer verbally to each other without ambiguity.  Existing projects like [WCodes](https://wcodes.org/wordlist) have provided a similar idea, but the word list contains homophones and words with negative connotations.
 
@@ -52,7 +52,18 @@ I discarded a few limitations WCodes adopted;  most notably, this list permits c
 
 ### Why is the word list order randomized?
 
-If an inappropriate or confusing word has slipped through the filter process, I plan to deprecate the word in future revisions of the package.  This package will guarantee backwards compatibility with reading previously generated codes, so any deprecated words will be implemented as alternates that are still recognized when decoding an ID.
+If an inappropriate or confusing word has slipped through the filter process, I plan to deprecate the word in future revisions of the package.  This package will guarantee backwards compatibility with reading previously generated codes, so any deprecated words will be implemented as alternates that are still recognized when decoding an ID.  
+
+This implies that the words shouldn't be presented in alphabetical order in case we need to make a swap later!  It also reduces the chances of a small off-by-one error being caused by lexically similar words.
+
+### How are bits apportioned to the words?
+
+~~~~
+  //   "word1"   "word2"   "word3"   "word4"
+  // | chunk1 || chunk2 || chunk3 || chunk4 |
+  // 543210987654321098765432109876543210cccc
+  // |        36 bit ID number          |{  } {checksum}
+~~~~
 
 ### This is English centric.
 

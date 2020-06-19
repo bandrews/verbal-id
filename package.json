@@ -4,7 +4,7 @@
   "description": "JS library to generate unique identifiers consisting of words that are pronounceable, distinguishable and inclusive.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -26,5 +26,11 @@
   "bugs": {
     "url": "https://github.com/bandrews/verbal-uuid/issues"
   },
-  "homepage": "https://github.com/bandrews/verbal-uuid#readme"
+  "homepage": "https://github.com/bandrews/verbal-uuid#readme",
+  "dependencies": {
+    "semistandard": "^14.2.0"
+  },
+  "devDependencies": {
+    "mocha": "^8.0.1"
+  }
 }
