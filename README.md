@@ -30,7 +30,7 @@ undefined
 
 ~~~~
 
-## Introducti'on
+## Introduction
 ### Why a new library?
 I wanted a unique identifier that my project's users could transfer verbally to each other without ambiguity.  Existing projects like [WCodes](https://wcodes.org/wordlist) have provided a similar idea, but the word list contains homophones and words with negative connotations.
 
