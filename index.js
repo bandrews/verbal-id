@@ -1062,7 +1062,7 @@ const parse = (id) => {
   }
 
   // with exactly four tokens.
-  const tokens = id.split(' ');
+  const tokens = id.toLowerCase().split(' ');
   if (tokens.length !== 4) {
     return undefined;
   }

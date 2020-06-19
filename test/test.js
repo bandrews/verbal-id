@@ -45,6 +45,9 @@ describe('verbal-uuid', function () {
 
       assert.strictEqual(id, id2);
     });
+    it('should parse input as case insensitive', function () {
+      assert.strictEqual('987654321', verbalid.parse('DEPTH branch Texture ChoColAte'));
+    });
     it('should return "0" for "dragon dragon dragon dragon"', function () {
       assert.strictEqual('0', verbalid.parse('dragon dragon dragon dragon'));
     });
