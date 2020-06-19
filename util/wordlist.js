@@ -16,14 +16,12 @@ for (const word of verbalid.words) {
       if (natural.Metaphone.process(other) === meta) {
         metaphoneTwins.push(other);
       }
-      if (natural.LevenshteinDistance(word, other) < 2)
-      {
-          leven.push(other);
+      if (natural.LevenshteinDistance(word, other) < 2) {
+        leven.push(other);
       }
     }
   }
-  if ( metaphoneTwins.length > 0 || leven.length > 0 ) {
-  console.log(`${word};${soundexTwins.join(',')};${metaphoneTwins.join(',')};${leven.join(',')}`);
+  if (metaphoneTwins.length > 0 || leven.length > 0) {
+    console.log(`${word};${soundexTwins.join(',')};${metaphoneTwins.join(',')};${leven.join(',')}`);
   }
 }
-
