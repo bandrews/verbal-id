@@ -578,7 +578,7 @@ const words = [
   'elbow',
   'relevant',
   'quarter',
-  'cockroach',
+  'excellent',
   'cable',
   'falcon',
   'second',
@@ -632,7 +632,7 @@ const words = [
   'storm',
   'gesture',
   'copper',
-  'helicopter',
+  'hopeful',
   'crisp',
   'sock',
   'sloth',
@@ -642,7 +642,7 @@ const words = [
   'table',
   'cinema',
   'detective',
-  'calculator',
+  'calculate',
   'triangle',
   'clock',
   'golden',
@@ -1020,7 +1020,7 @@ const words = [
   'reference',
   'living',
   'eager',
-  'chimpanzee',
+  'mechanism',
   'animal',
   'robin'];
 
@@ -1100,7 +1100,7 @@ const parse = (id) => {
 
 const create = (id) => {
   let idNumber;
-  if (!id) {
+  if (id === undefined || id === null) {
     // no ID specified, generate a random one
     idNumber = randomBigInt();
   } else {
@@ -1118,7 +1118,7 @@ const create = (id) => {
     }
   }
 
-  if (!idNumber || idNumber < 0n || idNumber > MAX_INT) {
+  if (idNumber === undefined || idNumber < 0n || idNumber > MAX_INT) {
     return undefined;
   }
 
@@ -1135,6 +1135,7 @@ const create = (id) => {
   const chunk4 = ((idNumber << 4n) & (0x3ffn)) + checksum;
 
   const result = [words[chunk1], words[chunk2], words[chunk3], words[chunk4]];
+ 
   return result.join(' ');
 };
 
