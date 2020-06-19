@@ -5,7 +5,7 @@ JS library to generate unique identifiers consisting of words that are pronounce
 
 #### Installation
 ~~~~
-$npm install verbal-uuid
+$ npm install verbal-uuid
 ~~~~
 
 #### Usage
