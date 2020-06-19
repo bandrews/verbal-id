@@ -1033,8 +1033,8 @@ const isString = (o) => {
 
 const randomBigInt = () => {
     return BigInt(MAX_INT.replace(/[F]/g, function (c) {
-        var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
-        return v.toString(16);
+        var r = Math.random() * 16 | 0;
+        return r.toString(16);
     }));
 };
 
