@@ -1120,3 +1120,4 @@ const create = (id) => {
 
 exports.create = create;
 exports.parse = parse;
+exports.words = words;
