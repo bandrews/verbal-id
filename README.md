@@ -44,8 +44,7 @@ From a starting point of the public domain WCodes list, I:
 
   * Manually removed inappropriate or difficult to spell words 
   * Filtered out homophones using the [comp.speech homophones-1.01.txt](http://www.speech.cs.cmu.edu/comp.speech/Section1/Lexical/homophone.html) list.
-  * Used [natural](https://www.npmjs.com/package/natural) to ensure every word on the list has a unique [Soundex](https://en.wikipedia.org/wiki/Soundex) and [Metaphone](https://en.wikipedia.org/wiki/Metaphone) code, removing words with similar pronunciations.
-  * Removed words to eliminate all pairs with a [Levenshtein distance](https://en.wikipedia.org/wiki/Levenshtein_distance) of less than 2.
+  * Used [natural](https://www.npmjs.com/package/natural) to ensure every word on the list has a unique [Metaphone](https://en.wikipedia.org/wiki/Metaphone) code, removing words with similar pronunciations.
   * Manually added ~400 new words from the [12dicts 6of12](http://wordlist.aspell.net/12dicts-readme/#nof12) list to replenish the (significant) removals up to 1024 entries.
   
 I discarded a few limitations WCodes adopted;  most notably, this list permits common compound words that aren't typically hyphenated like 'landscape' and 'moonlight'.

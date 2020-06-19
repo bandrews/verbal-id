@@ -1,5 +1,6 @@
 var assert = require('assert');
 var verbalid = require('../index.js');
+var natural = require('natural');
 
 describe('verbal-uuid', function () {
   describe('create()', function () {
@@ -72,10 +73,26 @@ describe('verbal-uuid', function () {
     it('should return undefined for "asdf asdf asdf asdf"', function () {
       assert.strictEqual(undefined, verbalid.parse('asdf asdf asdf asdf'));
     });
+    
+    it('should handle misspellings by returning "0" for "draagon dragon dragon dragon"', function () {
+      assert.strictEqual('0', verbalid.parse('draagon dragon dragon dragon'));
+    });
+    
+    it('should handle misspellings by returning "987654321" for "dipth beranche tekstuyr chockolatt"', function () {
+      assert.strictEqual('987654321', verbalid.parse('depth branch texture chocolate'));
+    });
   });
   describe('word list', function () {
     it('should have 1024 words', function () {
       assert.strictEqual(verbalid.words.length, 1024);
+    });
+    it('should contain words with unique Metaphone codes', function () {
+      this.timeout(10000);
+      for (let i = 0; i < verbalid.words.length; i++) {
+        for (let j = i + 1; j < verbalid.words.length; j++) {
+          assert.notStrictEqual(natural.Metaphone.process(verbalid.words[i]), natural.Metaphone.process(verbalid.words[j]));
+        }
+      }
     });
   });
 });
