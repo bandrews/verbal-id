@@ -28,6 +28,8 @@
   },
   "homepage": "https://github.com/bandrews/verbal-uuid#readme",
   "dependencies": {
+    "lzutf8": "^0.5.5",
+    "natural": "^2.1.5",
     "semistandard": "^14.2.0"
   },
   "devDependencies": {
