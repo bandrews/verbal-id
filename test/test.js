@@ -37,49 +37,92 @@ describe('verbal-uuid', function () {
     it('should return undefined for -1n', function () {
       assert.strictEqual(undefined, verbalid.create(-1n));
     });
-  });
-  describe('parse()', function () {
-    it('should round trip correctly', function () {
-      const id = verbalid.create();
-      const parsed = verbalid.parse(id);
-      const id2 = verbalid.create(parsed);
+    it('should generate consistently for the first 32 values', function () {
+      const correct = ['dragon dragon dragon dragon',
+        'dragon dragon dragon water',
+        'dragon dragon dragon grass',
+        'dragon dragon dragon calcium',
+        'dragon dragon dragon reverse',
+        'dragon dragon dragon cement',
+        'dragon dragon dragon urge',
+        'dragon dragon dragon crocodile',
+        'dragon dragon dragon land',
+        'dragon dragon dragon vertical',
+        'dragon dragon dragon ultimate',
+        'dragon dragon dragon platform',
+        'dragon dragon dragon select',
+        'dragon dragon dragon sphere',
+        'dragon dragon dragon attach',
+        'dragon dragon dragon castle',
+        'dragon dragon dragon cake',
+        'dragon dragon dragon respect',
+        'dragon dragon dragon collect',
+        'dragon dragon dragon comedy',
+        'dragon dragon dragon text',
+        'dragon dragon dragon museum',
+        'dragon dragon dragon mars',
+        'dragon dragon dragon railroad',
+        'dragon dragon dragon bath',
+        'dragon dragon dragon state',
+        'dragon dragon dragon nickname',
+        'dragon dragon dragon segment',
+        'dragon dragon dragon essential',
+        'dragon dragon dragon wise',
+        'dragon dragon dragon proton',
+        'dragon dragon dragon shampoo',
+        'dragon dragon dragon apartment',
+        'dragon dragon dragon nerve',
+        'dragon dragon dragon curtain',
+        'dragon dragon dragon mat'];
 
-      assert.strictEqual(id, id2);
+      for (let i = 0; i < 32; i++) {
+        console.log(verbalid.create(i.toString(16)));
+        assert.strictEqual(correct[i], verbalid.create(i.toString(16)));
+      }
     });
-    it('should parse input as case insensitive', function () {
-      assert.strictEqual('987654321', verbalid.parse('DEPTH branch Texture ChoColAte'));
-    });
-    it('should return "0" for "dragon dragon dragon dragon"', function () {
-      assert.strictEqual('0', verbalid.parse('dragon dragon dragon dragon'));
-    });
-    it('should return 0x1n for "dragon dragon dragon water" for 0x1n', function () {
-      assert.strictEqual('0', verbalid.parse('dragon dragon dragon dragon'));
-    });
-    it('should return "ffffffffe" for "robin robin robin accurate"', function () {
-      assert.strictEqual('ffffffffe', verbalid.parse('robin robin robin accurate'));
-    });
-    it('should return "fffffffff" for "robin robin robin career"', function () {
-      assert.strictEqual('fffffffff', verbalid.parse('robin robin robin career'));
-    });
-    it('should return "987654321" for "depth branch texture chocolate"', function () {
-      assert.strictEqual('987654321', verbalid.parse('depth branch texture chocolate'));
-    });
-    it('should return undefined for "depth branch texture dragon"', function () {
-      assert.strictEqual(undefined, verbalid.parse('depth branch texture dragon'));
-    });
-    it('should return undefined for "asdf"', function () {
-      assert.strictEqual(undefined, verbalid.parse('asdf'));
-    });
-    it('should return undefined for "asdf asdf asdf asdf"', function () {
-      assert.strictEqual(undefined, verbalid.parse('asdf asdf asdf asdf'));
-    });
-    
-    it('should handle misspellings by returning "0" for "draagon dragon dragon dragon"', function () {
-      assert.strictEqual('0', verbalid.parse('draagon dragon dragon dragon'));
-    });
-    
-    it('should handle misspellings by returning "987654321" for "dipth beranche tekstuyr chockolatt"', function () {
-      assert.strictEqual('987654321', verbalid.parse('depth branch texture chocolate'));
+    describe('parse()', function () {
+      it('should round trip correctly', function () {
+        const id = verbalid.create();
+        const parsed = verbalid.parse(id);
+        const id2 = verbalid.create(parsed);
+
+        assert.strictEqual(id, id2);
+      });
+      it('should parse input as case insensitive', function () {
+        assert.strictEqual('987654321', verbalid.parse('DEPTH branch Texture ChoColAte'));
+      });
+      it('should return "0" for "dragon dragon dragon dragon"', function () {
+        assert.strictEqual('0', verbalid.parse('dragon dragon dragon dragon'));
+      });
+      it('should return 0x1n for "dragon dragon dragon water" for 0x1n', function () {
+        assert.strictEqual('0', verbalid.parse('dragon dragon dragon dragon'));
+      });
+      it('should return "ffffffffe" for "robin robin robin accurate"', function () {
+        assert.strictEqual('ffffffffe', verbalid.parse('robin robin robin accurate'));
+      });
+      it('should return "fffffffff" for "robin robin robin career"', function () {
+        assert.strictEqual('fffffffff', verbalid.parse('robin robin robin career'));
+      });
+      it('should return "987654321" for "depth branch texture chocolate"', function () {
+        assert.strictEqual('987654321', verbalid.parse('depth branch texture chocolate'));
+      });
+      it('should return undefined for "depth branch texture dragon"', function () {
+        assert.strictEqual(undefined, verbalid.parse('depth branch texture dragon'));
+      });
+      it('should return undefined for "asdf"', function () {
+        assert.strictEqual(undefined, verbalid.parse('asdf'));
+      });
+      it('should return undefined for "asdf asdf asdf asdf"', function () {
+        assert.strictEqual(undefined, verbalid.parse('asdf asdf asdf asdf'));
+      });
+
+      it('should handle misspellings by returning "0" for "draagon dragon dragon dragon"', function () {
+        assert.strictEqual('0', verbalid.parse('draagon dragon dragon dragon'));
+      });
+
+      it('should handle misspellings by returning "987654321" for "dipth beranche tekstuyr chockolatt"', function () {
+        assert.strictEqual('987654321', verbalid.parse('depth branch texture chocolate'));
+      });
     });
   });
   describe('word list', function () {
