@@ -1,31 +1,31 @@
-# verbal-uuid
+# verbal-id
 JS library to generate unique identifiers consisting of words that are pronounceable, distinguishable and inclusive.
 
 ## Getting Started
 
 #### Installation
 ~~~~
-$ npm install verbal-uuid
+$ npm install verbal-id
 ~~~~
 
 #### Importing
 ~~~~
-const verbalid = require('verbal-uuid');
+const verbalid = require('verbal-id');
 ~~~~
 
 #### Usage
 ~~~~
 
-> verbaluuid.create()
+> verbalid.create()
 'vacant brand orchestra kiwi'
 
-> verbaluuid.parse("vacant brand orchestra kiwi")
+> verbalid.parse("vacant brand orchestra kiwi")
 '8aab9b999'
 
-> verbaluuid.create("8aab9b999")
+> verbalid.create("8aab9b999")
 'vacant brand orchestra kiwi'
 
-> verbaluuid.parse("vacant brand orchestra kiwi")    // valid words, but checksum is incorrect
+> verbalid.parse("vacant brand orchestra kiwi")    // valid words, but checksum is incorrect
 undefined
 
 ~~~~

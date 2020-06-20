@@ -1,5 +1,5 @@
 {
-  "name": "verbal-uuid",
+  "name": "verbal-id",
   "version": "0.0.1",
   "description": "JS library to generate unique identifiers consisting of words that are pronounceable, distinguishable and inclusive.",
   "main": "index.js",
