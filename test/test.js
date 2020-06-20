@@ -7,6 +7,11 @@ describe('verbal-uuid', function () {
     it('should return four words', function () {
       assert.strictEqual(4, verbalid.create().split(' ').length);
     });
+    it('should return four words 5000 times', function () {
+      for (let i = 0; i < 5000; i++) {
+        assert.strictEqual(4, verbalid.create().split(' ').length);
+      }
+    });
     it('should return "depth branch texture chocolate" for "987654321"', function () {
       assert.strictEqual('depth branch texture chocolate', verbalid.create('987654321'));
     });
@@ -14,25 +19,25 @@ describe('verbal-uuid', function () {
       assert.strictEqual('depth branch texture chocolate', verbalid.create('0x987654321'));
     });
     it('should return "depth branch texture chocolate" for 0x987654321n', function () {
-      assert.strictEqual('depth branch texture chocolate', verbalid.create(0x987654321n));
+      assert.strictEqual('depth branch texture chocolate', verbalid.create(0x987654321));
     });
     it('should return "dragon dragon dragon dragon" for 0x0n', function () {
-      assert.strictEqual('dragon dragon dragon dragon', verbalid.create(0x0n));
+      assert.strictEqual('dragon dragon dragon dragon', verbalid.create(0x0));
     });
     it('should return "dragon dragon dragon water" for 0x1n', function () {
-      assert.strictEqual('dragon dragon dragon water', verbalid.create(0x1n));
+      assert.strictEqual('dragon dragon dragon water', verbalid.create(0x1));
     });
     it('should return "robin robin robin accurate" for 0xffffffffen', function () {
-      assert.strictEqual('robin robin robin accurate', verbalid.create(0xffffffffen));
+      assert.strictEqual('robin robin robin accurate', verbalid.create(0xffffffffe));
     });
     it('should return "robin robin robin career" for 0xfffffffffn', function () {
-      assert.strictEqual('robin robin robin career', verbalid.create(0xfffffffffn));
+      assert.strictEqual('robin robin robin career', verbalid.create(0xfffffffff));
     });
     it('should return "robin robin robin career" for "0xfFfFfFfFf"', function () {
       assert.strictEqual('robin robin robin career', verbalid.create('0xfFfFfFfFf'));
     });
     it('should return undefined for 0x10000000000n', function () {
-      assert.strictEqual(undefined, verbalid.create(0x10000000000n));
+      assert.strictEqual(undefined, verbalid.create(0x10000000000));
     });
     it('should return undefined for -1n', function () {
       assert.strictEqual(undefined, verbalid.create(-1n));
@@ -159,6 +164,15 @@ describe('verbal-uuid', function () {
       const id2 = verbalid.create(parsed);
 
       assert.strictEqual(id, id2);
+    });
+    it('should round trip correctly 5000 times', function () {
+      for (let i = 0; i < 5000; i++) {
+        const id = verbalid.create();
+        const parsed = verbalid.parse(id);
+        const id2 = verbalid.create(parsed);
+
+        assert.strictEqual(id, id2);
+      }
     });
     it('should parse input as case insensitive', function () {
       assert.strictEqual('987654321', verbalid.parse('DEPTH branch Texture ChoColAte'));
