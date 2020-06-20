@@ -76,8 +76,79 @@ describe('verbal-uuid', function () {
         'dragon dragon dragon mat'];
 
       for (let i = 0; i < 32; i++) {
-        console.log(verbalid.create(i.toString(16)));
         assert.strictEqual(correct[i], verbalid.create(i.toString(16)));
+      }
+    });
+    it('should generate consistently for the last 64 values', function () {
+      const correct = [
+        'robin robin robin career',
+        'robin robin robin accurate',
+        'robin robin robin task',
+        'robin robin robin tortoise',
+        'robin robin robin judge',
+        'robin robin robin bright',
+        'robin robin robin clover',
+        'robin robin robin reliable',
+        'robin robin robin typical',
+        'robin robin robin clay',
+        'robin robin robin tsunami',
+        'robin robin robin anchor',
+        'robin robin robin sister',
+        'robin robin robin minister',
+        'robin robin robin pipe',
+        'robin robin robin digital',
+        'robin robin robin mushroom',
+        'robin robin robin crayon',
+        'robin robin robin cardboard',
+        'robin robin robin custom',
+        'robin robin robin brand',
+        'robin robin robin vulture',
+        'robin robin robin comb',
+        'robin robin robin baker',
+        'robin robin robin worth',
+        'robin robin robin feast',
+        'robin robin robin saddle',
+        'robin robin robin kettle',
+        'robin robin robin wind',
+        'robin robin robin curtain',
+        'robin robin robin athlete',
+        'robin robin robin device',
+        'robin robin robin gift',
+        'robin robin robin hotel',
+        'robin robin robin potential',
+        'robin robin robin juice',
+        'robin robin robin advanced',
+        'robin robin robin matrix',
+        'robin robin robin canvas',
+        'robin robin robin coffee',
+        'robin robin robin type',
+        'robin robin robin fog',
+        'robin robin robin girl',
+        'robin robin robin text',
+        'robin robin robin citizen',
+        'robin robin robin edge',
+        'robin robin robin carriage',
+        'robin robin robin lily',
+        'robin robin robin hill',
+        'robin robin robin fountain',
+        'robin robin robin smart',
+        'robin robin robin venture',
+        'robin robin robin question',
+        'robin robin robin truth',
+        'robin robin robin proper',
+        'robin robin robin pizza',
+        'robin robin robin fortune',
+        'robin robin robin urge',
+        'robin robin robin yak',
+        'robin robin robin vision',
+        'robin robin robin shelf',
+        'robin robin robin watch',
+        'robin robin robin scarf',
+        'robin robin robin legend'
+      ];
+
+      for (let i = 0; i < 64; i++) {
+        assert.strictEqual(correct[i], verbalid.create((0xFFFFFFFFF - i).toString(16)));
       }
     });
     describe('parse()', function () {
