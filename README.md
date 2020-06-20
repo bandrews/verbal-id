@@ -25,7 +25,7 @@ const verbalid = require('verbal-id');
 > verbalid.create("8aab9b999")
 'vacant brand orchestra kiwi'
 
-> verbalid.parse("vacant brand orchestra kiwi")    // valid words, but checksum is incorrect
+> verbalid.parse("vacant brand orchestra dragon")    // valid words, but checksum is incorrect
 undefined
 
 ~~~~
