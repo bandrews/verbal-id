@@ -1,6 +1,6 @@
 {
   "name": "verbal-id",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "JS library to generate unique identifiers consisting of words that are pronounceable, distinguishable and inclusive.",
   "main": "index.js",
   "scripts": {
@@ -28,12 +28,10 @@
   },
   "homepage": "https://github.com/bandrews/verbal-uuid#readme",
   "dependencies": {
-    "lzutf8": "^0.5.5",
-    "natural": "^2.1.5"
+    "lzutf8": "^0.5.5"
   },
   "devDependencies": {
     "mocha": "^8.0.1",
     "semistandard": "^14.2.0"
-
   }
 }

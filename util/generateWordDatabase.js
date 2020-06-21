@@ -1024,11 +1024,11 @@ const words = [
     'animal',
     'robin'];
 
-    const natural = require('natural');
+    const metaphone = require('../metaphone/metaphone');
   
     let lzutf8 = require('lzutf8');
     let worddb = words.join("|");
-    let metadb = words.map((w) => natural.Metaphone.process(w)).join("|");
+    let metadb = words.map((w) => ,etaphone.process(w)).join("|");
     
     console.log("worddb = \""+lzutf8.compress(worddb, {outputEncoding: "Base64"})+"\"");
     console.log("metadb = \""+lzutf8.compress(metadb, {outputEncoding: "Base64"})+"\"");

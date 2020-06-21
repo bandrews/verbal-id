@@ -1,6 +1,6 @@
 var assert = require('assert');
 var verbalid = require('../index.js');
-var natural = require('natural');
+var metaphone = require('../metaphone/metaphone');
 
 describe('verbal-uuid', function () {
   describe('create()', function () {
@@ -219,7 +219,7 @@ describe('word list', function () {
     this.timeout(10000);
     for (let i = 0; i < verbalid.words.length; i++) {
       for (let j = i + 1; j < verbalid.words.length; j++) {
-        assert.notStrictEqual(natural.Metaphone.process(verbalid.words[i]), natural.Metaphone.process(verbalid.words[j]));
+        assert.notStrictEqual(metaphone.process(verbalid.words[i]), metaphone.process(verbalid.words[j]));
       }
     }
   });
