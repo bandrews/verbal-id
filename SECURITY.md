@@ -2,13 +2,12 @@
 
 ## Supported Versions
 
-Use this section to tell people about which versions of your project are
-currently being supported with security updates.
+As 1.0 has not yet been declared and no breaking changes have been implemented, the latest version is always the supported version and can be adopted by all consumers.  Watch this space for changes when and if future breaking changes are introduced.
 
 | Version | Supported          |
 | ------- | ------------------ |
-| 0.0.4   | Yes  |
-| <=0.0.3 | No   |
+| @latest   | Yes  |
+| <latest | No   |
 
 ## Reporting a Vulnerability
 
