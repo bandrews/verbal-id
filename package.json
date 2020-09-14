@@ -1,6 +1,6 @@
 {
   "name": "verbal-id",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "JS library to generate unique identifiers consisting of words that are pronounceable, distinguishable and inclusive.",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bandrews/verbal-uuid.git"
+    "url": "git+https://github.com/bandrews/verbal-id.git"
   },
   "keywords": [
     "uuid",
@@ -24,14 +24,14 @@
   "author": "Ben Andrews",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/bandrews/verbal-uuid/issues"
+    "url": "https://github.com/bandrews/verbal-id/issues"
   },
-  "homepage": "https://github.com/bandrews/verbal-uuid#readme",
+  "homepage": "https://github.com/bandrews/verbal-id#readme",
   "dependencies": {
     "lzutf8": "^0.5.5"
   },
   "devDependencies": {
-    "mocha": "^8.0.1",
+    "mocha": "^8.1.3",
     "semistandard": "^14.2.0"
   }
 }
