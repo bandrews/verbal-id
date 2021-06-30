@@ -38,7 +38,7 @@ undefined
 I wanted a unique identifier that my project's users could transfer verbally to each other without ambiguity.  This project builds on the foundation of other projects that offer similar concepts, such as [WCodes](https://wcodes.org/wordlist), with the following additional principles:
 
 - verbal-id aggressively filters words that even have a small chance of being interpreted with negative connotations or potentially offensive meanings when combined with other words.
-- verbal-id uses Mtaphone phonetic codes to filter the word list for homophones and to match words entered by users, enabling the system to be tolerant to minor typos (e.g. "kiwi" and "keewee" map to the same metaphone code).
+- verbal-id uses Metaphone phonetic codes to filter the word list for homophones and to match words entered by users, enabling the system to be tolerant to minor typos (e.g. "kiwi" and "keewee" map to the same metaphone code).
 - verbal-id incorporates parity bits as a checksum to enable friendly error handling.
 
 ### How many bits are each ID?
