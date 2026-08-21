@@ -32,6 +32,6 @@
   },
   "devDependencies": {
     "mocha": "^10.2.0",
-    "semistandard": "^16.0.1"
+    "semistandard": "^17.0.0"
   }
 }
